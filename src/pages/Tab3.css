@@ -1,0 +1,14 @@
+html, body, ion-content {
+    height: 100%; /* Asegura que ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina cualquier margen predeterminado */
+  }
+
+ion-toolbar.custom-toolbar {
+    --background: rgb(255, 255, 255) !important;
+    opacity: 1;
+  }
+
+  ion-content {
+    overflow-y: auto; /* Permite desplazarse verticalmente */
+    position: relative; /* Necesario para asegurar que los elementos dentro no se desborden sin control */
+  }

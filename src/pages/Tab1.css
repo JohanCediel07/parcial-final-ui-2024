@@ -1,0 +1,139 @@
+html, body, ion-content {
+    height: 100%; /* Asegura que ocupe toda la altura de la ventana */
+    margin: 0; /* Elimina cualquier margen predeterminado */
+  }
+
+ion-toolbar.custom-toolbar {
+    --background: rgb(255, 255, 255) !important;
+    opacity: 1;
+  }
+
+  ion-content {
+    overflow-y: auto; /* Permite desplazarse verticalmente */
+    position: relative; /* Necesario para asegurar que los elementos dentro no se desborden sin control */
+  }
+
+.banner-container {
+    position: relative; /* Asegura que los elementos dentro puedan posicionarse por encima */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra la imagen */
+    margin-bottom: 20px; /* Espacio entre el banner y el contenido */
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Estilo de la imagen del banner */
+  .banner-image {
+    width: 100%;      /* La imagen sigue ocupando todo el ancho */
+    height: 800px;    /* Ajusta la altura, puedes probar con diferentes valores */
+    object-fit: cover; /* Hace que la imagen se ajuste sin perder la proporción */
+    opacity: 0.3;
+  }
+
+  .overlay-images {
+    position: absolute; /* Hace que las imágenes se posicionen por encima del banner */
+    top: 45%; /* Ajusta la posición vertical (puedes probar con otro valor) */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el contenedor dentro del banner */
+    display: flex;
+    justify-content: center; /* Alinea las imágenes horizontalmente */
+    width: 90%; /* Ajusta el tamaño del contenedor de las imágenes */
+    z-index: 10; /* Asegura que las imágenes estén por encima del banner */
+    gap: 100px;
+    opacity: 0.8;
+  }
+  
+  /* Estilo para las imágenes dentro del banner */
+  .overlay-image {
+    width: 400px; /* Tamaño de cada imagen */
+    height: 400px; /* Mantiene la proporción de la imagen */
+    border: 3px solid #000000; /* Borde negro para las imágenes */
+    border-radius: 10px; /* Redondea las esquinas de las imágenes */
+    box-shadow: 0px 4px 100px rgba(255, 255, 255, 0.3); /* Sombra para resaltar las imágenes */
+  }
+
+  .overlay-item {
+    display: flex;
+    flex-direction: column; /* Apila la imagen y el texto verticalmente */
+    align-items: center; /* Centra el texto con respecto a la imagen */
+    transform: scale(1); /* Tamaño inicial */
+    transition: transform 0.3s ease-in-out; /* Animación suave */
+    
+  }
+  
+  /* Texto debajo de las imágenes */
+  .overlay-text {
+    margin-top:30px; /* Espacio entre la imagen y el texto */
+    font-size: 25px; /* Tamaño del texto */
+    color: #ffffff; /* Color del texto */
+    font-weight: bold;
+    text-align: center; /* Centra el texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra decorativa */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .overlay-item:hover {
+    transform: scale(1.2); /* Aumenta tamaño al 120% */
+    cursor: pointer; /* Cambia el cursor para indicar interactividad */
+  }
+
+  .banner-paragraph {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Cambia según la fuente que prefieras */
+    font-size: 35px;
+    color: rgb(0, 0, 0); /* O ajusta el color según el diseño */
+    text-align: center;
+    margin-top: 100px; /* Espaciado respecto a las imágenes */
+    padding: 0 10px; /* Añade espacio horizontal si es necesario */
+    position: absolute; /* Mantén el texto dentro del contenedor */
+    bottom: 10px; /* Ponerlo en la parte inferior del contenedor */
+    left: 50%;
+    transform: translateX(-50%); /* Centrar el párrafo horizontalmente */
+    z-index: 2; /* Asegúrate de que esté por encima del fondo del banner */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco con opacidad de 0.7 */
+    border-radius: 10px; /* Bordes redondeados */
+    width: 50%; /* Ajusta el ancho del fondo */
+  }
+
+  @media (max-width: 800px) {
+    ion-content {
+        overflow-y: 100%; /* Permite desplazarse verticalmente */
+        position: relative; /* Necesario para asegurar que los elementos dentro no se desborden sin control */
+      }
+    /* Ajuste del header para pantallas más pequeñas */
+    ion-toolbar.custom-toolbar {
+        height: auto;
+    }
+
+    .banner-image {
+        height: 1000px; /* Reduce la altura del banner */
+        align-items: center;
+    }
+
+    .overlay-images {
+        top: 44%; /* Alinea mejor las imágenes en pantallas más pequeñas */
+        gap: 20px; /* Espaciado reducido entre las imágenes */
+        flex-direction:column;
+        gap: 20px;
+    }
+
+    .overlay-image {
+        width: 200px;  /* Reduce el tamaño de las imágenes */
+        height: 200px;
+    }
+
+    .banner-paragraph {
+        font-size: 22px; /* Reduce el tamaño del texto */
+        width: 80%; /* Aumenta el ancho del texto */
+        margin-top: 100px; /* Ajusta el espaciado */
+    }
+
+    .overlay-text {
+        font-size: 20px; /* Reduce el tamaño del texto debajo de las imágenes */
+    }
+    .logo{
+        height: 20%;
+    }
+}
+
+  

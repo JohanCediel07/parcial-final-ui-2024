@@ -1,18 +1,19 @@
 html, body, ion-content {
     height: 100%; /* Asegura que ocupe toda la altura de la ventana */
     margin: 0; /* Elimina cualquier margen predeterminado */
+    display: flex;
+    flex-direction: column;
+  }
+  ion-content {
+    flex: 1; /* Hace que el contenido ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
   }
 
 ion-toolbar.custom-toolbar {
     --background: rgb(255, 255, 255) !important;
     opacity: 1;
   }
-
-  ion-content {
-    overflow-y: auto; /* Permite desplazarse verticalmente */
-    position: relative; /* Necesario para asegurar que los elementos dentro no se desborden sin control */
-  }
-
 .banner-container {
     position: relative; /* Asegura que los elementos dentro puedan posicionarse por encima */
     width: 100%;
@@ -80,6 +81,7 @@ ion-toolbar.custom-toolbar {
 
   .banner-paragraph {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /* Cambia según la fuente que prefieras */
+    font-weight: bold;
     font-size: 35px;
     color: rgb(0, 0, 0); /* O ajusta el color según el diseño */
     text-align: center;
@@ -135,5 +137,95 @@ ion-toolbar.custom-toolbar {
         height: 20%;
     }
 }
+
+.footer-container {
+  position: relative; /* Elimina cualquier comportamiento de fijación */
+  bottom: 0; /* Asegura que esté al final de su contenido natural */
+  width: 100%; /* Ocupa el ancho completo */
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+
+.footer-column {
+  flex: 1; /* Cada columna ocupa el mismo espacio */
+  max-width: 450px; /* Limita el ancho máximo de las columnas */
+  margin: 0 10px; /* Espaciado entre columnas */
+  text-align: center; /* Centra el texto dentro de cada columna */
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 15px; /* Espacio entre el título y los subtítulos */
+  text-transform: uppercase;
+  color: #bb8b24; /* Color dorado para destacar los títulos */
+  font-weight: bold; /* Negrita para el título */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.footer-list {
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0;
+  list-style-type: none; /* Elimina los puntos de la lista */
+  margin: 0; /* Sin margen externo */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.footer-list li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer; /* Cambia el cursor al pasar sobre el texto */
+  margin: 5px 0; /* Espaciado entre elementos */
+}
+
+.footer-list li:hover {
+  text-decoration: underline; /* Subraya el texto al pasar el mouse */
+}
+
+.footer-socials {
+  display: flex; /* Organiza los íconos horizontalmente */
+  gap: 15px; /* Espaciado entre los íconos */
+  justify-content: center; /* Centra los iconos socialmente */
+}
+
+.social-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Efecto de agrandamiento al pasar el mouse */
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 800px) {
+  .footer-container {
+    display:block;
+    flex-direction:column; /* Cambia las columnas a una dirección vertical */
+    align-items: center; /* Centra las columnas verticalmente */
+    padding: 1px; /* Aumenta el espacio interno para un diseño más cómodo */
+  }
+
+  .footer-column {
+    max-width: 100%; /* Asegura que las columnas ocupen todo el ancho disponible */
+    margin: 5px 0; /* Espaciado entre las columnas */
+    text-align: center; /* Mantiene el texto centrado */
+  }
+
+  .footer-socials {
+    justify-content: center; /* Centra los íconos sociales en pantallas pequeñas */
+  }
+
+  .social-icon {
+    margin: 5px; /* Espaciado entre los íconos sociales */
+  }
+}
+
+
 
   

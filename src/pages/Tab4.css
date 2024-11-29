@@ -1,7 +1,14 @@
 html, body, ion-content {
-    height: 100%; /* Asegura que ocupe toda la altura de la ventana */
-    margin: 0; /* Elimina cualquier margen predeterminado */
-  }
+  height: 100%; /* Asegura que ocupe toda la altura de la ventana */
+  margin: 0; /* Elimina cualquier margen predeterminado */
+  display: flex;
+  flex-direction: column;
+}
+ion-content {
+  flex: 1; /* Hace que el contenido ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+}
 
 ion-toolbar.custom-toolbar {
     --background: rgb(255, 255, 255) !important;
@@ -11,4 +18,50 @@ ion-toolbar.custom-toolbar {
   ion-content {
     overflow-y: auto; /* Permite desplazarse verticalmente */
     position: relative; /* Necesario para asegurar que los elementos dentro no se desborden sin control */
+  }
+
+  .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 20px;
+    align-items: center;
+  }
+  
+  .image-item {
+    text-align: center; /* Centra las imágenes y botones */
+    display: flex;
+    flex-direction: column; /* Coloca imagen y botón en una columna */
+    align-items: center;
+  }
+  
+  .image {
+    width: 100%; /* Las imágenes ocuparán el 100% del ancho disponible */
+    max-width: 300px; /* Tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados */
+    object-fit: cover; /* Ajusta la imagen sin perder proporción */
+  }
+  
+  .rent-button {
+    margin-top: 10px; /* Espacio entre la imagen y el botón */
+    color: white; /* Color del texto en el botón */
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    max-width: 200px; /* El botón no excede 200px de ancho */
+    padding: 10px 0;
+    border-radius: 5px; /* Bordes redondeados en el botón */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transición suave */
+  }
+  
+  /* Efecto de animación cuando se pasa el cursor */
+  .rent-button:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del botón */
+  }
+  
+  @media (max-width: 800px) {
+    .image-grid {
+      grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas pequeñas */
+    }
   }

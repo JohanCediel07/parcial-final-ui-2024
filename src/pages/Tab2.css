@@ -65,4 +65,20 @@ ion-toolbar.custom-toolbar {
       grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas pequeñas */
     }
   }
+  .spline-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Mantener el 100% del ancho */
+    height: 100vh; /* Mantener el 100% del alto en pantalla completa */
+    z-index: -1;
+    overflow: hidden; /* Asegura que la escena no desborde */
+  }
+  
+  @media (max-width: 768px) {
+    .spline-container {
+      height: 60vh; /* Ajustar la altura en pantallas pequeñas */
+      top: 0; /* Asegurarse de que la escena siempre esté en la parte superior */
+    }
+  }
   

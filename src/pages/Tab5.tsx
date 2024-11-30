@@ -58,7 +58,7 @@ const Tab5: React.FC = () => {
               trigger="present-alert"
               header="¡Su pago esta siendo procesado!"
               subHeader="Se enviará un comprobante para verificar la solicitud"
-              message="Al correo electrónico llegaran las indicaciones y respectiva ubicación del transporte seleccionado"
+              message="Al correo electrónico llegaran las indicaciones y respectiva ubicación más cercana del transporte seleccionado"
               buttons={['Aceptar']}
             ></IonAlert>
             </IonRouterLink>

@@ -65,3 +65,12 @@ ion-toolbar.custom-toolbar {
       grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas pequeñas */
     }
   }
+
+  .spline-container {
+    position: relative; /* Mantener la escena fija en su lugar */
+    top: 0; /* Alinearlo al inicio de la pantalla */
+    left: 0;
+    width: 100%; /* Hacer que ocupe todo el ancho de la pantalla */
+    height: 100vh; /* Hacer que ocupe toda la altura de la pantalla */
+    z-index: -1; /* Colocar la escena detrás de otros elementos */
+  }
